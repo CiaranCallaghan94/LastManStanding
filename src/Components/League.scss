@@ -1,0 +1,105 @@
+$font-color: #212529;
+$primary-color: #fffdfc;
+$secondary-color: #fffaf7;
+$border-color: #e8e8e8;
+
+.league-container{
+  padding: 10px;
+}
+
+.league-title{
+  padding: 10px;
+  color: $font-color;
+  font-weight: bold;
+  font-size: 1.8em;
+}
+
+.league-interaction{
+  background-color: $font-color;
+  text-align: left;
+}
+
+.league-interaction-title{
+  color: $primary-color;
+  padding: 10px;
+  font-weight: bold;
+  border: 1px solid $border-color
+}
+
+.league-interaction-state{
+  background-color: $secondary-color;
+  padding: 20px;
+}
+
+.league-interaction-state-headers{
+  background-color: $primary-color;
+}
+.league-interaction-state-header{
+  padding: 5px;
+  padding-left: 10px;
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  font-weight: bold;
+}
+
+.league-interaction-state-items{
+  background-color: $primary-color;
+  border: 1px solid $border-color;
+}
+
+.league-interaction-state-item{
+  padding: 10px;
+  border: 1px solid $border-color;
+  font-size: 1.1em;
+}
+
+.league-interaction-state-item-status{
+  padding: 10px;
+  text-align: center;
+  border: 1px solid $border-color;
+  font-size: 1.3em;
+}
+
+.league-table{
+  padding: 2px;
+  background-color: $font-color;
+  text-align: left;
+  border: 1px solid $border-color
+
+}
+
+.league-table-title{
+  color: $primary-color;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.league-table-state-headers{
+  background-color: $primary-color;
+}
+.league-table-state-header{
+  padding: 5px;
+  padding-left: 10px;
+  border: 1px solid $border-color;
+  border-bottom: 0;
+  font-weight: bold;
+}
+
+.league-table-state-items{
+  background-color: $primary-color;
+  border: 1px solid $border-color;
+}
+
+.league-table-state-item{
+  padding: 2px;
+  padding-left: 10px;
+  border: 1px solid $border-color;
+  font-size: 0.9em;
+}
+
+.league-table-state-item-status{
+  padding: 2px;
+  text-align: center;
+  border: 1px solid $border-color;
+  font-size: 0.9em;
+}

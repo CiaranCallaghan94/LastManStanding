@@ -1,0 +1,21 @@
+$font-color: #212529;
+$primary-color:  #fffdfc;
+$secondary-color: #fffaf7;
+$border-color: #e8e8e8;
+
+body{
+  background-color: $secondary-color;
+}
+
+.app {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.app-container {
+  // border: 1px solid $border-color;
+  height: 100vmin;
+  background-color: $secondary-color;
+  color: $font-color;
+  padding: 10px;
+}

@@ -1,0 +1,65 @@
+$font-color: #212529;
+$primary-color:  #fffdfc;
+$secondary-color: #fffaf7;
+$border-color: #e8e8e8;
+
+.profile-container{
+  // border: 1px solid $border-color;
+  margin-top: 40px;
+  padding: 10px;
+}
+
+.profile{
+  background-color: $secondary-color;
+  padding: 10px;
+  // border: 3px solid $border-color;
+  border-radius: 4px;
+}
+
+.profile-name{
+  margin-top: 40px;
+  color: $font-color;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+
+}
+
+.profile-statistics-section{
+  background-color: $primary-color;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.profile-statistics-title{
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  font-size: 1.1em;
+  padding-right: 20px;
+}
+
+.profile-statistics-databox{
+  background-color: $font-color;
+  color: $primary-color;
+}
+
+.profile-statistics-databox ul{
+  list-style: none;
+  padding: 10px;
+  padding-left: 30px;
+  margin-bottom: 0px;
+  border-bottom: 2px solid $primary-color;
+  border-left: 2px solid $primary-color;
+  border-right: 2px solid $primary-color;
+}
+
+.footer-section{
+  color: $font-color;
+}
+
+.social-section{
+  margin-top: 10px;
+}
