@@ -1,0 +1,42 @@
+$font-color: #212529;
+$primary-color:  #fffdfc;
+$secondary-color: #fffaf7;
+$border-color: #e8e8e8;
+$special-color: #FF9900;
+
+
+.teams-container-button{
+  padding: 10px;
+  background: $special-color;
+  margin-top: 10px;
+  width: 100%;
+  border: 0;
+  color: $font-color;
+  font-weight: bold;
+}
+
+.teams-container-button:hover{
+  padding: 10px;
+  background: $font-color;
+  margin-top: 10px;
+  width: 100%;
+  border: 0;
+  color: $secondary-color;
+  font-weight: bold;
+}
+
+.team-button{
+  margin-top: 5px;
+  background-color: $primary-color;
+  color: $font-color;
+  font-weight: bold;
+  border: 1px solid $border-color;
+}
+
+.team-button:hover{
+  margin-top: 5px;
+  background-color: $special-color;
+  color: $font-color;
+  font-weight: bold;
+  border: 1px solid $border-color;
+}

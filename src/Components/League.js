@@ -5,13 +5,14 @@ import { Col, Container, Row } from "shards-react";
 // CSS
 import './League.scss';
 // Components
+import TeamPicker from './TeamPicker'
 
 
 class League extends React.Component {
   render(){
     return (
       <div className="league-container">
-        <div className="league-title">KoreanV League</div>
+        <div className="league-title">League</div>
         <LeagueInteraction />
         <LeagueTable />
       </div>
@@ -40,7 +41,9 @@ function LeagueInteraction(props){
             <Col sm="3" className="league-interaction-state-item">MNC</Col>
           </Row>
         </Container>
+        <TeamPicker />
       </div>
+
     </div>
   );
 }

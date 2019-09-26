@@ -8,9 +8,11 @@ import './Profile.scss';
 
 class Profile extends React.Component {
   render(){
+    const {profile, username} = this.props;
+
     return (
       <div className="profile-container">
-        <ProfileData/>
+        <ProfileData profile={profile} username={username}/>
       </div>
     );
   }
@@ -23,21 +25,23 @@ Display:
   -leagues
 */
 function ProfileData(props){
-  // Pass Username and statistics
+  const profile = props.profile;
+  const username = props.username;
   return (
     <div className="profile">
       <div className="profile-name">
-        Callo18
+        {username}
       </div>
-      <ProfileStatistics />
-      <ProfileStatistics />
-      <ProfileStatistics />
+      <ProfileStatistics profile={profile} />
       <Footer />
     </div>
   );
 }
 
 function ProfileStatistics(props){
+
+  const {wins, losses, leagues} = props.profile;
+
   return (
     <div className="profile-statistics-section">
       <div className="profile-statistics-title">
@@ -45,9 +49,9 @@ function ProfileStatistics(props){
       </div>
       <div className="profile-statistics-databox">
         <ul>
-          <li>Wins: 3</li>
-          <li>Losses: 10</li>
-          <li>Leagues: 1</li>
+          <li>Wins: {wins}</li>
+          <li>Losses: {losses}</li>
+          <li>Leagues: {leagues.length}</li>
         </ul>
       </div>
     </div>

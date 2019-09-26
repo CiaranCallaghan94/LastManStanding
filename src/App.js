@@ -4,6 +4,8 @@ import React from 'react';
 import { Container, Row, Col } from "shards-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "shards-ui/dist/css/shards.min.css"
+//  Loading
+import ReactLoading from 'react-loading';
 // Amplify
 import Amplify from 'aws-amplify';
 import { withAuthenticator } from 'aws-amplify-react';
@@ -13,6 +15,11 @@ import './App.scss';
 import Nav from './Components/Nav';
 import Profile from './Components/Profile';
 import Leagues from './Components/Leagues';
+
+/*
+TO DO:
+Pass League information thoughout Components
+*/
 
 Amplify.configure({
     Auth: {
@@ -42,23 +49,142 @@ Amplify.configure({
 });
 
 class App extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.getProfile = this.getProfile.bind(this);
+    this.state = {
+      isLoading: true
+    };
+  }
+
+  componentDidMount() {
+    this.getProfile();
+  }
+
+  getProfile(){
+    // Make GetProfile Request
+    /*
+    {
+    wins: 1,
+    losses: 20,
+    leagues: [1]
+    }
+    */
+    // Take the List of Leagues and Make GetLeagues Request
+    /*
+    {
+    leagues: [{
+      leagueName: "Main",
+      players: [
+      {
+        username: "Callo18",
+        status: true,
+        previousWeeks: "MNU, CHS, LIV",
+        thisWeek: "MNC"
+      },
+      {
+        username: "Falloon",
+        status: false,
+        previousWeeks: "MNU, CHS, LIV",
+        thisWeek: "MNC"
+      },
+      {
+        username: "canOfJam",
+        status: true,
+        previousWeeks: "MNU, CHS, LIV",
+        thisWeek: "MNC"
+      }
+      ]
+    }]
+    }
+    // Get teams
+    teams: [
+      {
+        name: "Manchester United",
+        abbrev: "MNU"
+      },
+      {
+        name: "LiverPool",
+        abbrev: "LIV"
+      },
+    ]
+    */
+    this.setState(state => (
+      {
+        isLoading: false,
+        profile: {
+          wins: 1,
+          losses: 20,
+          leagues: [1]
+        },
+        leagues: [
+          {
+            leagueName: "Main",
+            players: [
+              {
+                username: "Callo18",
+                status: true,
+                previousWeeks: "MNU, CHS, LIV",
+                thisWeek: "MNC"
+              },
+              {
+                username: "Falloon",
+                status: false,
+                previousWeeks: "MNU, CHS, LIV",
+                thisWeek: "MNC"
+              },
+              {
+                username: "canOfJam",
+                status: true,
+                previousWeeks: "MNU, CHS, LIV",
+                thisWeek: "MNC"
+              }
+            ]
+          }
+        ],
+        teams: [
+          {
+            name: "Manchester United",
+            abbrev: "MNU"
+          },
+          {
+            name: "LiverPool",
+            abbrev: "LIV"
+          },
+        ]
+      }));
+  }
+
   render(){
+    const {isLoading, profile, leagues, teams} = this.state;
+    const {username} = this.props.authData;
     return (
       <div className="app">
-        <Nav />
-        <Container className="app-container">
-          <Row noGutters>
-            <Col sm="12" lg="8">
-              <Leagues />
-            </Col>
-            <Col sm="12" lg="4">
-              <Profile />
-            </Col>
-          </Row>
-        </Container>
+        {isLoading ? <Loading/> : (
+          <>
+            <Nav />
+            <Container className="app-container">
+              <Row noGutters>
+                <Col sm="12" lg="8">
+                  <Leagues leagues={leagues} teams={teams}/>
+                </Col>
+                <Col sm="12" lg="4">
+                  <Profile profile={profile} username={username}/>
+                </Col>
+              </Row>
+            </Container>
+          </>
+        )}
       </div>
     );
   }
 }
+
+const Loading = () => (
+  <div className="loading-object">
+    <ReactLoading type={'spin'} color={'#FF9900'} height={'100px'} width={'100px'} />
+  </div>
+);
 
 export default withAuthenticator(App, false);
