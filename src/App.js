@@ -114,8 +114,8 @@ class App extends React.Component {
       {
         isLoading: false,
         profile: {
-          wins: 1,
-          losses: 20,
+          wins: 5,
+          losses: 32,
           leagues: [1]
         },
         leagues: [

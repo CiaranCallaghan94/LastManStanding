@@ -2,6 +2,7 @@ $font-color: #212529;
 $primary-color:  #fffdfc;
 $secondary-color: #fffaf7;
 $border-color: #e8e8e8;
+$special-color: #FF9900;
 
 .profile-container{
   // border: 1px solid $border-color;
@@ -18,11 +19,10 @@ $border-color: #e8e8e8;
 
 .profile-name{
   margin-top: 40px;
-  color: $font-color;
+  color: $special-color;
   font-weight: bold;
-  font-size: 1.5em;
+  font-size: 1.8em;
   margin-bottom: 20px;
-
 }
 
 .profile-statistics-section{
